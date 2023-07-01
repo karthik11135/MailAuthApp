@@ -1,0 +1,26 @@
+<%- include('partials/top') %>
+
+<div
+  class="list-group mx-lg-auto mx-4 mt-5 overflow-auto"
+  style="max-width: 60rem; max-height: 70vh"
+>
+  <% if(mails == 0) { %>
+  <h4 class="text-center m-1 p-2 border-1">
+    Hey there, You don't have any mails
+  </h4>
+  <% } %> <% if(mails != 0) { %> <% mails.forEach((mail) => { %>
+
+  <a href="#" class="list-group-item list-group-item-action">
+    <span
+      class="m-1 px-2 py-1 text-white rounded-pill"
+      style="background-color: <%= mail.color %>"
+      ><%= mail.name %></span
+    >
+    <%= mail.message %>
+  </a>
+
+  <% }) %>
+  <% } %>
+</div>
+
+<%- include('partials/bottom') %>

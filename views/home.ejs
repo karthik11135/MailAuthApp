@@ -1,0 +1,55 @@
+<%- include('partials/top') %> <% if(user != null) { %>
+<div class="container">
+  <div class="m-5 text-center p-5">
+    <h1 class="rounded"  style="font-size: 4rem; background-image:linear-gradient(to right,#bae6fd,#38bdf8, #2563eb);;">Welcome <%= user.name %></h1>
+  </div>
+</div>
+
+<% } %> <% if(!user) { %>
+<div class="container px-4 py-3">
+  <div class="row flex-lg-row-reverse align-items-center g-5">
+    <div class="col-10 col-sm-8 d-none d-lg-block col-lg-6">
+      <img
+        src="/images/mailicon.jpg"
+        class="d-block mx-lg-auto img-fluid"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+    <div class="col-lg-6">
+      <div class="lc-block mb-3">
+        <div editable="rich">
+          <h2 class="fw-bold display-5">Welcome to Mailer!!!</h2>
+        </div>
+      </div>
+
+      <div class="lc-block mb-3">
+        <div editable="rich">
+          <p class="lead">
+            Mailer is a backend application which can authenticate and register
+            you as a user. Once you are logged in, you can check your received
+            mails and send mails to other registered users.
+          </p>
+          <p class="lead fs-6">(your passwords are hashed)</p>
+        </div>
+      </div>
+
+      <div class="lc-block d-grid gap-2 d-md-flex justify-content-md-start">
+        <a
+          class="btn btn-primary px-4 me-md-2 rounded-pill"
+          href="/signup"
+          role="button"
+          >Get right in</a
+        >
+        <a
+          class="btn btn-outline-secondary rounded-pill px-4"
+          href="/login"
+          role="button"
+          >I'm an existing user</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<%} %> <%- include('partials/bottom') %>
